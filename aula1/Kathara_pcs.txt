@@ -1,0 +1,44 @@
+Criação de 3 maquinas virtuais com Kathara conectadas pelo mesmo link:
+
+Passo 1 Criando as maquinas virtuais com o mesmo link (A):
+
+  $ kathara vstart -n pc1 --eth 0:A
+  $ kathara vstart -n pc2 --eth 0:A
+  $ kathara vstart -n pc3 --eth 0:A
+
+Passo 2 atribuindo um endereço ip a cada pc virtual com a mesma mascara de sub-rede:
+  pc1:
+    $ ip address add dev eth0 10.0.0.1/24
+  pc2:
+    $ ip address add dev eth0 10.0.0.2/24
+  pc3:
+    $ ip address add dev eth0 10.0.0.3/24
+
+Passo 3:
+  Utilizando o comando ping em cada maquina com o endereço das outras: 
+  pc1:
+      $ ping 10.0.0.2
+      $ ^C
+      $ clear
+      $ ping 10.0.0.3
+      $ ^C
+  
+  pc2:
+     $ ping 10.0.0.1
+     $ ^C
+     $ clear
+     $ ping 10.0.0.3
+     $ ^C
+
+   pc3:
+     $ ping 10.0.0.2
+     $ ^C
+     $ clear
+     $ ping 10.0.0.1
+     $ ^C
+
+Passo 4: 
+  Encerrando as maquinas:
+  $  kathara vclean -n pc1
+  $  kathara vclean -n pc2
+  $  kathara vclean -n pc3
