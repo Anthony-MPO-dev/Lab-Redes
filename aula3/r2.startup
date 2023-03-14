@@ -1,0 +1,5 @@
+ip address add 200.100.10.1/24 dev eth0
+ip address add 192.168.0.1/24 dev eth1
+ip address add 1.1.1.1/24 dev eth2
+ip route add 10.0.0.0/24 via 200.100.10.2
+ip route add 2.2.2.0/24 via 1.1.1.2
