@@ -1,4 +1,4 @@
-ip address add 8.2.1.1/26 dev eth0
+ip address add 8.2.1.113/29 dev eth0
 ip address add 8.2.1.121/30 dev eth1
 ip address add 8.2.1.97/28 dev eth3
-ip route add default via 200.100.10.1
+ip route add default via 8.2.1.122

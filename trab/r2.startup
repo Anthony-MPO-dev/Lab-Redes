@@ -1,5 +1,7 @@
 ip address add 8.2.1.122/30 dev eth0
 ip address add 8.2.1.125/30 dev eth1
 ip address add 8.2.1.253/30 dev eth2
-ip route add 10.0.0.0/24 via 200.100.10.2
-ip route add 2.2.2.0/24 via 1.1.1.2
+ip route add 8.2.1.112/29 via 8.2.1.121
+ip route add 8.2.1.96/28 via 8.2.1.121
+ip route add 8.2.1.0/26 via 8.2.1.126
+ip route add 8.2.1.64/27 via 8.2.1.254
